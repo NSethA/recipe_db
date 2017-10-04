@@ -28,6 +28,8 @@ gem 'nested_form_fields'
 
 gem 'carrierwave', '~> 1.0'
 
+gem 'fog-aws'
+
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'
