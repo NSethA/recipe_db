@@ -1,32 +1,44 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" rel="stylesheet">
 
-	<% if @recipe.image? %>
-	<%= image_tag @recipe.image.url, class: "recipe-show" %>
-	<% end %>
+<div class="page-title title-text">
+	<h1>Recipe</h1>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @recipe.title %>
-</p>
+<div class="row">
+	<div class="col-md-6">
+		<p>
+			<h1><%= @recipe.title %></h1>
+  			<h3><%= @recipe.description %></h3>
+		</p>
+	</div>
+	<div class="col-md-6">
+		<% if @recipe.image? %>
+		<%= image_tag @recipe.image.url, class: "recipe-show" %>
+		<% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @recipe.description %>
-</p>
+	</div>
+</div><!--row close-->
 
-<h3>Ingredients</h3>
+<h2>Ingredients</h2>
 	<ul>
 		<% for @ingredient in @recipe.ingredients %>
 			<li><%= @ingredient.content %></li>
 		<% end %>
 	</ul>
 
-<h3>Steps</h3>
+<h2>Steps</h2>
 	<ol>
 		<% for @step in @recipe.steps %>
 			<li><%= @step.direction %></li>
 		<% end %>
 	</ol>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<h2><%= link_to 'Edit Recipe', edit_recipe_path(@recipe), class:"btn btn-primary btn-block"%></h2>
+
+</div>
+<footer>
+	<div class="footer">
+    </div>
+</footer>

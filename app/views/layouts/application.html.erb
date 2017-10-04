@@ -3,10 +3,22 @@
   <head>
     <title>RecipeDb</title>
     <%= csrf_meta_tags %>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application.css', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application.js', 'data-turbolinks-track': 'reload' %>
   </head>
+
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-faded">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="nav navbar-nav navbar-left">
+    	<li ><%= link_to "Home", root_path, class:"list-text" %></li>
+    </ul>
+   <!-- <ul class="nav navbar-nav navbar-right">
+ 		<li ><%= link_to "About", pages_about_path, class:"list-text" %></li>
+    </ul>-->
+  </div>
+</nav>
 
   <body>
     <%= yield %>
